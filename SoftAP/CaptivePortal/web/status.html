@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Provisioning Status</title>
+    <title>WiFi Setup Status</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        html {
+        html, body {
             height: 100%;
-        }
-        body {
             font-family: 'Segoe UI', sans-serif;
             font-size: 1rem;
             line-height: 1.6;
-            height: 100%;
         }
         .wrap {
             width: 100%;
@@ -39,31 +36,17 @@
         .status-message {
             margin-bottom: 1rem;
         }
-        .status-button {
-            background: #69d2e7;
-            border: 1px solid #ddd;
-            color: #ffffff;
-            padding: 10px;
-            width: 100%;
-            text-transform: uppercase;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .status-button:hover {
-            background: #69c8e7;
-        }
     </style>
 </head>
 <body>
     <div class="wrap">
         <div class="status-box">
             <div class="status-header">
-                <h3>Status</h3>
+                <h3>WiFi Setup Status</h3>
             </div>
             <div class="status-message">
                 <p>{{STATUS_MESSAGE}}</p>
             </div>
-            <a href="/" class="status-button">Back to Home</a>
         </div>
     </div>
 </body>
