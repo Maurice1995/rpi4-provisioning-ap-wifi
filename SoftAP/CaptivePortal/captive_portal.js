@@ -90,7 +90,9 @@ app.post('/wifi_credential', function (req, res) {
     if (password.length > 6) {
       update_nm_connection(ssid, password);
       res.send(renderStatusPage("OK and Reboot"));
-      software_reboot();
+      setTimeout(() => {
+        software_reboot();
+      }, 5000); // Delay reboot by 5 seconds to allow response to be sent
     } else {
       res.send(renderStatusPage("Password must be greater than 6 characters"));
     }
@@ -102,6 +104,7 @@ app.post('/wifi_credential', function (req, res) {
 app.post('/wifi_factory_reset', function (req, res) {
     factory_nm_connection();
     res.send(renderStatusPage("OK and Reboot"));
-    software_reboot();
+    setTimeout(() => {
+      software_reboot();
+    }, 5000); // Delay reboot by 5 seconds to allow response to be sent
 });
-
