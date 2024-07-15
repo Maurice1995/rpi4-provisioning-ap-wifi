@@ -11,6 +11,14 @@
 
 ## 2. Requisition software
 
+Quick setup Command:
+
+   ```
+   sudo apt-get update && sudo apt-get install -y git && git clone https://github.com/Maurice1995/rpi4-provisioning-ap-wifi.git && cd rpi4-provisioning-ap-wifi/ && chmod +x prerequisites.sh && sudo ./prerequisites.sh
+   ```
+
+OR Step by Step:
+
 * Setup wifi country code
 
     ```
