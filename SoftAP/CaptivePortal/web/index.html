@@ -1,109 +1,84 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<title>Provisoning Service</title>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		html {
-			height: 100%;
-		}
-
-		body {
-			font-family: 'Segoe UI', sans-serif;
-			;
-			font-size: 1rem;
-			line-height: 1.6;
-			height: 100%;
-		}
-
-		.wrap {
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background: #fafafa;
-		}
-
-		.login-form {
-			width: 350px;
-			margin: 0 auto;
-			border: 1px solid #ddd;
-			padding: 2rem;
-			background: #ffffff;
-		}
-
-		.form-input {
-			background: #fafafa;
-			border: 1px solid #eeeeee;
-			padding: 12px;
-			width: 100%;
-		}
-
-		.form-group {
-			margin-bottom: 1rem;
-		}
-
-		.form-button {
-			background: #69d2e7;
-			border: 1px solid #ddd;
-			color: #ffffff;
-			padding: 10px;
-			width: 100%;
-			text-transform: uppercase;
-		}
-
-		.form-button:hover {
-			background: #69c8e7;
-		}
-
-		.form-header {
-			text-align: center;
-			margin-bottom: 2rem;
-		}
-
-		.form-footer {
-			text-align: center;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Setup - Riddle&Code</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+        }
+        .setup-form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #0066B3;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-button {
+            background-color: #0066B3;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .form-button:hover {
+            background-color: #004e8a;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
-
 <body>
-	<div class="wrap">
-		<form class="login-form" method="POST" action="/wifi_credential">
-			<div class="form-header">
-				<h3>Wifi Setup</h3>
-				<!--	
-				<p>SSID and Wifi Config</p>
-			-->
-
-			</div>
-			<!--SSID Input-->
-			<div class="form-group">
-				<input type="text" class="form-input" name="ssid" placeholder="SSID Name">
-			</div>
-			<!--Password Input-->
-			<div class="form-group">
-				<input type="password" class="form-input" name="password" placeholder="Password">
-			</div>
-			<!--Login Button-->
-			<div class="form-group">
-				<button class="form-button" type="submit">Connect & Reboot</button>
-			</div>
-			<!--
-			<div class="form-footer">
-				Factory Configuration? <a href="/wifi_factory_reset">Reset</a>
-			</div>
-			-->
-		</form>
-	</div>
-	<!--/.wrap-->
+    <div class="container">
+        <img src="/images/riddle_and_code_logo.png" alt="Riddle&Code Logo" class="logo">
+        <form class="setup-form" method="POST" action="/wifi_credential">
+            <h1>WiFi Setup</h1>
+            <div class="form-group">
+                <input type="text" class="form-input" name="ssid" placeholder="SSID Name" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button class="form-button" type="submit">Connect & Reboot</button>
+            </div>
+        </form>
+    </div>
 </body>
-
 </html>

@@ -18,15 +18,13 @@ function renderStatusPage(statusMessage, autoReboot = false) {
   const templatePath = path.join(__dirname, 'web', 'status.html');
   let html = fs.readFileSync(templatePath, 'utf8');
   html = html.replace('{{STATUS_MESSAGE}}', statusMessage);
-  if (autoReboot) {
-    html = html.replace('</body>', `
-      <script>
-        setTimeout(() => {
-          document.body.innerHTML += '<p>Rebooting...</p>';
-        }, 5000);
-      </script>
-    </body>`);
+  html = html.replace('{{AUTO_REBOOT}}', autoReboot.toString());
+
+  if (!autoReboot) {
+    // Remove the reboot script if autoReboot is false
+    html = html.replace(/<script>[\s\S]*?<\/script>/, '');
   }
+
   return html;
 }
 
